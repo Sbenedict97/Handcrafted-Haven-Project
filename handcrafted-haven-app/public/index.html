@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYUI WDD430 Team Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-sans">
+  <header class="bg-gray-700 text-white p-4 text-center">
+    <h1 class="text-2xl">WDD430 Team Project</h1>
+  </header>
+
+  <main class="container mx-auto p-4">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Featured Products</h2>
+    <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Products will be loaded here -->
+    </div>
+  </main>
+
+  <script>
+    async function loadProducts() {
+      const response = await fetch("http://localhost:5000/products");
+      const products = await response.json();
+      const productList = document.getElementById("product-list");
+
+      productList.innerHTML = products.map(product => `
+        <div class="border p-4 rounded shadow">
+          <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-cover">
+          <h3 class="text-lg font-semibold mt-2">${product.name}</h3>
+          <p class="text-gray-600">$${product.price}</p>
+        </div>
+      `).join("");
+    }
+    loadProducts();
+  </script>
+</body>
+</html>
