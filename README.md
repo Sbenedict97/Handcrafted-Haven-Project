@@ -16,3 +16,4 @@ General Layout/ Elements: Grid layout for the products, 3-4 products per row wit
 Styling Framework: Tailwind CSS styling
 
 Database Service: MongoDB, or SQL
+
