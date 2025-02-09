@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BYUI WDD430 Team Project</title>
+  <title>WDD430 Team Project - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white font-sans">
@@ -13,55 +13,40 @@
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">WDD430 Team</h1>
       <ul class="flex space-x-6">
-        <li><a href="#" class="hover:text-orange-400">Products</a></li>
-        <li><a href="#" class="hover:text-orange-400">Login</a></li>
-        <li><a href="#" class="hover:text-orange-400">Shopping Cart</a></li>
-        <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+        <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+        <li><a href="products.html" class="hover:text-orange-400">Products</a></li>
+        <li><a href="login.html" class="hover:text-orange-400">Login</a></li>
+        <li><a href="cart.html" class="hover:text-orange-400">Shopping Cart</a></li>
+        <li><a href="about.html" class="hover:text-orange-400">About Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="bg-gray-700 text-white p-6 text-center">
-    <h1 class="text-3xl font-bold">WDD430 Team Project</h1>
+  <!-- Hero Section -->
+  <header class="text-center py-20 bg-gray-100">
+    <h2 class="text-4xl font-bold text-gray-800">Welcome to Our Marketplace</h2>
+    <p class="text-gray-600 mt-2">Find the best products at great prices.</p>
+    <a href="products.html" class="mt-4 inline-block bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600">
+      Shop Now
+    </a>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto p-6">
-    <h2 class="text-xl font-bold text-gray-800 mb-4">Featured Products</h2>
+  <!-- Featured Products -->
+  <section class="container mx-auto p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Featured Products</h3>
     <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Products will be loaded here -->
+      <!-- Products will be loaded dynamically -->
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-gray-700 text-white p-4 mt-10">
-    <div class="container mx-auto flex justify-between items-center">
+    <div class="container mx-auto flex justify-between">
       <p>&copy; 2025 WDD430 Team Project</p>
-      <ul class="flex space-x-6">
-        <li><a href="#" class="hover:text-orange-400">Customer Service</a></li>
-        <li><a href="#" class="hover:text-orange-400">About Us</a></li>
-      </ul>
+      <a href="customer-service.html" class="hover:text-orange-400">Customer Service</a>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    async function loadProducts() {
-      const response = await fetch("http://localhost:5000/products");
-      const products = await response.json();
-      const productList = document.getElementById("product-list");
-
-      productList.innerHTML = products.map(product => `
-        <div class="border p-4 rounded-lg shadow-lg bg-white">
-          <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-cover rounded">
-          <h3 class="text-lg font-semibold mt-2 text-gray-900">${product.name}</h3>
-          <p class="text-gray-600">$${product.price}</p>
-        </div>
-      `).join("");
-    }
-    loadProducts();
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
