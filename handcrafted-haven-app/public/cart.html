@@ -1,2 +1,73 @@
-<h2 class="text-xl font-bold text-gray-800 mb-4">Your Shopping Cart</h2>
-<p>Cart functionality will be added later.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WDD430 Team Project - Shopping Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gray-700 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">WDD430 Team</a>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+        <li><a href="products.html" class="hover:text-orange-400">Products</a></li>
+        <li><a href="login.html" class="hover:text-orange-400">Login</a></li>
+        <li><a href="cart.html" class="hover:text-orange-400">Shopping Cart</a></li>
+        <li><a href="about.html" class="hover:text-orange-400">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Shopping Cart -->
+  <main class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Shopping Cart</h2>
+    <div id="cart-items" class="space-y-4">
+      <!-- Cart items will be loaded dynamically from the API -->
+      <p>Your cart is currently empty.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white p-4 mt-10">
+    <div class="container mx-auto flex justify-between">
+      <p>&copy; 2025 WDD430 Team Project</p>
+      <a href="customer-service.html" class="hover:text-orange-400">Customer Service</a>
+    </div>
+  </footer>
+
+  <script>
+    // Future integration: load cart items from your MongoDB-backed API
+    async function loadCartItems() {
+      try {
+        const response = await fetch("http://localhost:5000/cart");
+        if (response.ok) {
+          const cartItems = await response.json();
+          const cartContainer = document.getElementById("cart-items");
+          if (cartItems.length > 0) {
+            cartContainer.innerHTML = cartItems.map(item => `
+              <div class="border p-4 rounded-lg shadow-md flex justify-between items-center">
+                <div>
+                  <h3 class="font-bold">${item.name}</h3>
+                  <p>$${item.price}</p>
+                </div>
+                <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">Remove</button>
+              </div>
+            `).join("");
+          } else {
+            cartContainer.innerHTML = "<p>Your cart is currently empty.</p>";
+          }
+        }
+      } catch (error) {
+        console.error("Error loading cart items:", error);
+      }
+    }
+
+    if(document.getElementById("cart-items")) {
+      loadCartItems();
+    }
+  </script>
+</body>
+</html>
