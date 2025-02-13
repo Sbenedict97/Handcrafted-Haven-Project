@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - WDD430 Team Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WDD430 Team Project - Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white font-sans">
-
   <!-- Navbar -->
   <nav class="bg-gray-700 text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">WDD430 Team</h1>
+      <a href="index.html" class="text-2xl font-bold">WDD430 Team</a>
       <ul class="flex space-x-6">
         <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
         <li><a href="products.html" class="hover:text-orange-400">Products</a></li>
+        <li><a href="login.html" class="hover:text-orange-400">Login</a></li>
         <li><a href="cart.html" class="hover:text-orange-400">Shopping Cart</a></li>
         <li><a href="about.html" class="hover:text-orange-400">About Us</a></li>
       </ul>
@@ -22,25 +22,25 @@
   </nav>
 
   <!-- Login Form -->
-  <main class="container mx-auto p-6"> 
-    <h2 class="text-xl font-bold text-gray-800 mb-4">Login</h2>
+  <main class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Login</h2>
     <form action="/login" method="POST" class="max-w-sm mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
       <label for="email" class="block mb-2">Email:</label>
-      <input type="email" id="email" name="email" class="w-full p-2 border rounded mb-4" required>
-  
+      <input type="email" id="email" name="email" class="w-full p-2 border rounded mb-4" required />
+
       <label for="password" class="block mb-2">Password:</label>
-      <input type="password" id="password" name="password" class="w-full p-2 border rounded mb-4" required>
-  
+      <input type="password" id="password" name="password" class="w-full p-2 border rounded mb-4" required />
+
       <button type="submit" class="w-full bg-orange-500 text-white p-2 rounded hover:bg-orange-600">Login</button>
     </form>
   </main>
-  
 
+  <!-- Footer -->
   <footer class="bg-gray-700 text-white p-4 mt-10">
-    <div class="container mx-auto text-center">
+    <div class="container mx-auto flex justify-between">
       <p>&copy; 2025 WDD430 Team Project</p>
+      <a href="customer-service.html" class="hover:text-orange-400">Customer Service</a>
     </div>
   </footer>
-
 </body>
 </html>
