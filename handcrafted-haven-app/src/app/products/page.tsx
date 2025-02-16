@@ -15,7 +15,7 @@ export default function Page() {
                 placeholder="Type a product..." className="peer block w-80 rounded-md border border-gray-400 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"  />
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
     </div>
-            <div className="grid grid-cols-3 place-items-center gap-10 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
               <ProductContainer />
             </div>
         </main>
