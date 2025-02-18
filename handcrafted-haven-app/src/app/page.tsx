@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <body className="bg-white font-sans">
+    <body className="bg-white font-montserrat">
       <nav className="bg-gray-700 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">WDD430 Team</h1>

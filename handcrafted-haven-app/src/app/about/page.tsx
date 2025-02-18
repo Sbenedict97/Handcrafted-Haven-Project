@@ -2,7 +2,7 @@ import NavBar from "../ui/nav/navBar";
 
 export default function Page() {
   return (
-    <body className="bg-white font-sans">
+    <body className="bg-white font-montserrat">
       <NavBar />
       <main className="container mx-auto p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">About Us</h2>
