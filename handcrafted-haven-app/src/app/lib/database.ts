@@ -3,15 +3,27 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const MONGO_URL = process.env.MONGO_URL as string;
+
+if (!MONGO_URL) {
+  throw new Error("Missing MongoDB connection URL");
+}
+
 const connectionToDatabase = async () => {
   try {
-    await mongoose.connect(process.env.MongoURL as string, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
+    if (mongoose.connection.readyState === 1) {
+      console.log("Already connected to database");
+      return;
+    }
+    
+    await mongoose.connect(MONGO_URL, {
+      dbName: "handcraft1",
     });
-    console.log("Connected to db");
+
+    console.log("Connected to MongoDB");
   } catch (err) {
-    console.log("Database connection error:", err);
+    console.error("Database connection error:", err);
+    throw new Error("Failed to connect to MongoDB");
   }
 };
 
