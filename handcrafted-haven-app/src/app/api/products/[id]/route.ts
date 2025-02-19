@@ -3,11 +3,10 @@ import { getProductById } from "@/app/lib/databaseActions";
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   try {
-    // Desestructurar y esperar a que los params estén disponibles
-    const { id } = await params; // Asegúrate de que params esté resuelto antes de acceder a 'id'
+    
+    const { id } = params;
     console.log("Este es el id: " + id);
 
-    // Consulta el producto en la base de datos
     const product = await getProductById(id);
 
     if (!product) {
