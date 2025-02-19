@@ -13,6 +13,11 @@ export default function Home() {
               </Link>
             </li>
             <li>
+              <Link href="/" className="hover:text-orange-400">
+                Sellers
+              </Link>
+            </li>
+            <li>
               <Link href="/products" className="hover:text-orange-400">
                 Products
               </Link>
