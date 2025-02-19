@@ -58,28 +58,31 @@ const sellers = [
 
 export default function SellersPage() {
   return (
-    <div className="bg-white text-black min-h-screen p-8">
-      <NavBar /> 
-      <h1 className="text-3xl font-bold mb-2">Sellers</h1>
-      <p className="text-lg text-gray-600 mb-6">Discover the stories and craftsmanship of our talented artisans.</p>
-      {sellers.map((seller) => (
-        <div key={seller.id} className="mb-8 p-4 bg-gray-800 text-white rounded-lg hover:shadow-lg border border-gray-700">
-          <h2 className="text-2xl font-semibold">{seller.craftsman}</h2>
-          <h2 className="text-2xl font-semibold">{seller.craftswoman}</h2>
-          <p className="text-gray-400">ID: {seller.id}</p>
-          <p className="mt-2">{seller.bio}</p>
-          <p className="mt-2 italic">{seller.story}</p>
-          <h3 className="mt-4 font-medium">Crafts:</h3>
-          <ul className="list-disc list-inside">
-            {seller.crafts.map((craft, index) => (
-              <li key={index}> 
-                <strong>{craft.item}</strong> - ${craft.price}
-                <p className="text-gray-300 text-sm">{craft.description}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <div className="bg-white text-black min-h-screen">
+      <NavBar />
+      <div className="p-8">
+        <h1 className="text-3xl font-bold mb-2">Sellers</h1>
+        <p className="text-lg text-gray-600 mb-6">Discover the stories and craftsmanship of our talented artisans.</p>
+        {sellers.map((seller) => (
+          <div key={seller.id} className="mb-8 p-4 bg-gray-800 text-white rounded-lg hover:shadow-lg border border-gray-700">
+            <h2 className="text-2xl font-semibold">{seller.craftsman}</h2>
+            <h2 className="text-2xl font-semibold">{seller.craftswoman}</h2>
+            <p className="text-gray-400">ID: {seller.id}</p>
+            <p className="mt-2">{seller.bio}</p>
+            <p className="mt-2 italic">{seller.story}</p>
+            <h3 className="mt-4 font-medium">Crafts:</h3>
+            <ul className="list-disc list-inside">
+              {seller.crafts.map((craft, index) => (
+                <li key={index}>
+                  <strong>{craft.item}</strong> - ${craft.price}
+                  <p className="text-gray-300 text-sm">{craft.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div> 
+        ))} 
+      </div>
     </div>
   );
 }
+
