@@ -1,6 +1,6 @@
 import ProductContainer from "../ui/products/product-container";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import NavBar from "../ui/nav/navBar";
+import NavBar from "@/app/ui/nav/navBar";
 
 export default function Page() {
   return (

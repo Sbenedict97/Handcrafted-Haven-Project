@@ -1,12 +1,18 @@
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function NavBar() {
   return (
     <nav className="bg-gray-700 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <a href="index.html" className="text-2xl font-bold">
-          WDD430 Team
-        </a>
+      <a href="index.html" className="flex items-center"> 
+          <Image
+            src="/logo_handcrafted_haven.png" 
+            alt="WDD430 Team Logo"
+            width={100}
+            height={100}
+           />
+      </a>
         <ul className="flex space-x-6">
           <li>
             <Link href="/" className="hover:text-orange-400">
