@@ -1,5 +1,5 @@
 import React from 'react';
-
+import NavBar from "../ui/nav/navBar";
 const sellers = [
   {
     id: 1,
