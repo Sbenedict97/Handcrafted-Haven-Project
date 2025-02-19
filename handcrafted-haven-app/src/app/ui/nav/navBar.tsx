@@ -24,6 +24,11 @@ export default function NavBar() {
               Products
             </Link>
           </li>
+           <li>
+            <Link href="/sellers" className="hover:text-orange-400">
+              Sellers
+            </Link>
+          </li>
           <li>
             <Link href="/login" className="hover:text-orange-400">
               Login
