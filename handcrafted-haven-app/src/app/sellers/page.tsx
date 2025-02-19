@@ -1,5 +1,8 @@
 import React from 'react';
-import NavBar from "../ui/nav/navBar";
+import Link from 'next/link'; 
+import NavBar from "@/app/ui/nav/navBar";
+
+
 const sellers = [
   {
     id: 1,
@@ -56,6 +59,7 @@ const sellers = [
 export default function SellersPage() {
   return (
     <div className="bg-white text-black min-h-screen p-8">
+      <NavBar /> 
       <h1 className="text-3xl font-bold mb-2">Sellers</h1>
       <p className="text-lg text-gray-600 mb-6">Discover the stories and craftsmanship of our talented artisans.</p>
       {sellers.map((seller) => (
