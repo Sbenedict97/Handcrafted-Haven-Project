@@ -8,7 +8,7 @@ export default function Home() {
       <NavBar />
         <header className="text-center py-20 bg-gray-100">
         <h2 className="text-4xl font-bold text-gray-800">
-          Welcome to Handcrafted Haven
+          Welcome to Handcrafted Haven Store
         </h2>
         <p className="text-gray-600 mt-2">
           Find the best products at great prices.
