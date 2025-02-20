@@ -35,7 +35,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href="cart.html" className="hover:text-orange-400">
+            <Link href="/cart" className="hover:text-orange-400">
               Shopping Cart
             </Link>
           </li>
