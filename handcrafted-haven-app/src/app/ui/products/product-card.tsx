@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface ProductProps {
     name: string;
     price: number;
@@ -10,7 +12,14 @@ interface ProductProps {
 export default function ProductCard( { name, price, description, image, rating }: ProductProps) {
     return (
             <div className="bg-white rounded-lg shadow-lg border border-[--gray] p-4 transition-all duration-300 hover:scale-105">
-                <img className="mx-auto" src={image} alt="Product Image Placeholder" />
+                <Image
+                    src={image} 
+                    alt={name} 
+                    width={300}  
+                    height={300} 
+                    className="mx-auto" 
+                    priority 
+                />
                 <div className="p-1">
                     <p className="mt-4 text-xl font-bold">{name}</p>
                     <p className="mt-2 text-lg text-[--green] font-bold">{price}</p>
