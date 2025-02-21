@@ -2,12 +2,23 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
+
+interface Product {
+  name: string;
+  price: number;
+  description: string;
+  longDescription: string;
+  image: string;
+  rating: number;
+  category: string;
+}
 
 export default function ProductDetail() {
   const params = useParams();
   const id = params.id;
 
-  const [product, setProduct] = useState<any>(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,10 +52,12 @@ export default function ProductDetail() {
       <div className="flex justify-center items-center flex-col lg:flex-row gap-8 mt-5 p-10">
         {/* image and details */}
         <div className="w-2/6">
-          <img
+        <Image
             src={product.image}
             alt={product.name}
             className="mx-auto w-full rounded-lg border-[--orange] border"
+            width={500}
+            height={500}
           />
         </div>
         <div className="w-1/2">

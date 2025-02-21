@@ -21,7 +21,7 @@ const Product = mongoose.models.Product || mongoose.model("Product", ProductSche
 // Get all products
 export const getAllProducts = async () => {
   try {
-    await connectionToDatabase(); // Llamar a la función de conexión
+    await connectionToDatabase(); // Call function that connects to the database
     return await Product.find({});
   } catch (err) {
     console.error("Error fetching products:", err);
@@ -44,15 +44,14 @@ export const getProductById = async (id: string) => {
 
     // Execute the consult using findById
     const product = await Product.findById(objectId);
-    console.log("Product we get from database:", product);
 
     if (!product) {
-      console.error(`No se encontró el producto con ID: ${id}`);
+      console.error(`Product not found with ID: ${id}`);
     }
 
     return product;
   } catch (err) {
-    console.error("Error al buscar el producto por ID:", err);
-    throw new Error("Error al obtener el producto");
+    console.error("Error finding product by ID:", err);
+    throw new Error("Error getting the product");
   }
 };

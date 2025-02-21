@@ -29,6 +29,7 @@ export default function ProductContainer() {
           setError("Failed to load products");
         }
       } catch (err) {
+        console.error(err);
         setError("An error occurred while fetching products");
       } finally {
         setLoading(false);
@@ -53,7 +54,6 @@ export default function ProductContainer() {
       {products.map((product) => (
         <Link href={`/product/${product._id}`} key={product._id}>
           <ProductCard
-            key={product._id}
             name={product.name}
             price={product.price}
             description={product.description}

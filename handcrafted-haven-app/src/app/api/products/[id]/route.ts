@@ -1,18 +1,13 @@
 import { NextResponse } from "next/server";
 import { getProductById } from "@/app/lib/databaseActions";
-import mongoose from "mongoose";
 
 
 export const GET = async (request: Request, { params }: { params: { id: string } }) => {
   try {
-    const { id } = params;
-
-    console.log("ID we get from the API:", id);
+    const { id } = await params;
 
 
     const product = await getProductById(id);
-
-    // console.log("ID we get in getProductById:", id);
 
 
     if (!product) {
