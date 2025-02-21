@@ -46,6 +46,8 @@ export default function ProductContainer() {
     return <div>{error}</div>;
   }
 
+  console.log("This are the products: " + products)
+
   return (
     <>
       {products.map((product) => (
