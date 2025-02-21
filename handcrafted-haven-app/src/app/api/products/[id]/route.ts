@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 import { getProductById } from "@/app/lib/databaseActions";
 
 
-export const GET = async (request: Request, { params }: { params: { id: string } }) => {
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   try {
     const { id } = params;
     console.log("ID we get from the API:", id);
@@ -17,4 +20,4 @@ export const GET = async (request: Request, { params }: { params: { id: string }
     console.error("Error fetching product:", error);
     return NextResponse.json({ message: "Server Error" }, { status: 500 });
   }
-};
+}
