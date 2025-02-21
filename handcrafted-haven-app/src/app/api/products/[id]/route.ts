@@ -3,11 +3,10 @@ import { getProductById } from "@/app/lib/databaseActions";
 
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: Request, context: { params: { id: string } }
 ) {
   try {
-    const { id } = params;
+    const { id } = context.params;
     console.log("ID we get from the API:", id);
 
     const product = await getProductById(id);
